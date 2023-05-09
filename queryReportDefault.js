@@ -84,6 +84,8 @@ const [SxTGetLenderInfoResponse] = await Promise.all([
 ])
 
 
+
+//This function has been generalized and will need to be made compatible with multiple messaging service APIs
 const LenderContact = Functions.makeHttpRequest({
   url: "`" + SxTGetLenderInfoResponse.data[0]["CONTACTAPI"] + "`",
   method: "POST",
