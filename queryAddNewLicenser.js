@@ -19,7 +19,7 @@ const SxTBiscuitCreate = Functions.makeHttpRequest({
   method: "GET",
   headers: { "accept": "application/json", "authorization": DON_AUTH_TOKEN , "biscuit": DON_AUTH_BISCUIT, "content-type": "application/json"},
   data : {
-    "command": "sxtcli sql-support table-authz --accessType=PERMISSIONED --privateKey=" + DON_BISCUIT_PRIVATE_KEY + " --resourceId=LINKLEND_LICENSERS." + licenser + '"'
+    "command": "sxtcli sql-support table-authz --accessType=PERMISSIONED --privateKey=" + DON_BISCUIT_PRIVATE_KEY + " --resourceId=LINKLEND." + licenser + '"'
   }
 })
 
