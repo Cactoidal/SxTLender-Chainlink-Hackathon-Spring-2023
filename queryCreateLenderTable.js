@@ -57,7 +57,7 @@ await new Promise(resolve => setTimeout(resolve, 5000));
 const SxTCheckForBiscuit = Functions.makeHttpRequest({
   url: `https://hackathon.spaceandtime.dev/v1/sql/decrypt/dql`,
   method: "POST",
-  headers: { "accept": "application/json", "authorization": DON_AUTH_TOKEN , "biscuit": SxTGetLicenserBiscuitResponse.data[0]["BISCUIT"], "content-type": "application/json"},
+  headers: { "accept": "application/json", "authorization": DON_AUTH_TOKEN , "biscuit": DON_AUTH_BISCUIT, "content-type": "application/json"},
   data : {
     "resourceId": "BISCUITS.LINKLEND",
     "sqlText": "SELECT BISCUIT FROM BISCUIT.LINKLEND WHERE ID = LENDERS;"
@@ -80,7 +80,7 @@ if (!SxTCheckForBiscuitResponse.error) {
 const SxTCheckForTable = Functions.makeHttpRequest({
   url: `https://hackathon.spaceandtime.dev/v1/sql/decrypt/dql`,
   method: "POST",
-  headers: { "accept": "application/json", "authorization": DON_AUTH_TOKEN , "biscuit": SxTGetLicenserBiscuitResponse.data[0]["BISCUIT"], "content-type": "application/json"},
+  headers: { "accept": "application/json", "authorization": DON_AUTH_TOKEN , "biscuit": SxTCheckForBiscuitResponse.data[0]["BISCUIT"], "content-type": "application/json"},
   data : {
     "resourceId": "LINKLEND.LENDERS",
     "sqlText": "SELECT * FROM LINKLEND.LENDERS;"
